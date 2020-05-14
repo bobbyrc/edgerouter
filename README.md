@@ -125,7 +125,7 @@ Enjoy!
 
 Bobby Craig – [@bobbyrc](https://github.com/bobbyrc)
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
 
 
 ## Contributing
