@@ -1,7 +1,7 @@
 # Edgerouter 4/6P Config for Google Fiber
 > Free yourself from the 'Network Box'
 
-This guide will take you through, step by step, setting up your Edgerouter 4 or Edgerouter 6P for use with Google Fiber's gigabit service. Some of the guide will be using EdgeOS to configure the masic setup, but we will need to use the CLI for the last bit. Some level of knowledge regarding routers and the use of the CLI is assumed for this guide.  
+This guide will take you through, step by step, setting up your Edgerouter 4 or Edgerouter 6P for use with Google Fiber's gigabit service. Some of the guide will be using EdgeOS to configure the basic setup, but we will need to use the CLI for the last bit. Some level of knowledge regarding routers and the use of the CLI is assumed for this guide.  
   
 **For this config to work properly, your Edgerouter must be at factory default settings**
 
@@ -10,7 +10,7 @@ This guide will take you through, step by step, setting up your Edgerouter 4 or 
 ## Step 1 - EdgeOS
 
 - First, ensure your Edgerouter is set to factory default settings. Then, you'll want to connect your computer to the eth0 port on the front of the Edgerouter via an ethernet cable.  
-We need to mnually set the IP address of our computer to be on the same subnet as the router. By default, the router is on the subnet 192.168.1.0/24  
+We need to manually set the IP address of our computer to be on the same subnet as the router. By default, the router is on the subnet 192.168.1.0/24  
 We can choose any IP we like in this range, apart from 192.168.1.1, which is the Edgerouter itself. I'll use 192.168.1.10   
 On a Mac, your settings for your connection should look like this:
 
@@ -30,7 +30,7 @@ password: ubnt
 ```
 
 - Next, let's click on the `Wizards` tab above the dashboard.  
-We'll be using the `WAN+2LAN2` wizard for our inital setup:
+We'll be using the `WAN+2LAN2` wizard for our initial setup:
 
 ![](https://i.imgur.com/OlirjnF.png)
 
@@ -71,7 +71,7 @@ ssh yourusername@192.168.1.1
 
 ## Step 2 - CLI
 
-Your router should now be able to connect to Google Fiber! If you tested your connection at this point though, you would realize that you aren't getting the full gigabit speeds. We need to run two sets of commands in the CLI to letus take full advantage of our connection.  
+Your router should now be able to connect to Google Fiber! If you tested your connection at this point though, you would realize that you aren't getting the full gigabit speeds. We need to run two sets of commands in the CLI to let us take full advantage of our connection.  
 **For each set of commands, copy/paste each line individually**
 
 - Before we start changing our configuration, we need to enter edit mode. Run this command:
@@ -82,7 +82,7 @@ configure
 
 You should now see `[edit]` in the terminal after every command you run. This lets you know you are still in edit mode.
 
-- The first command will set some QoS settings so that Google Fiber prioitizes our data correctly.
+- The first command will set some QoS settings so that Google Fiber prioritizes our data correctly.
 
 ```
 set interfaces ethernet eth0 vif 2 egress-qos "0:3 1:3 2:3 3:3 4:3 5:3 6:3 7:3"
@@ -111,7 +111,7 @@ commit ; save
 
 ## Step 3 - Setting up your LAN
 That's it! Not so bad huh?  
-The very last thing you need to do is finish setting up your network, wether that's connecting a switch so you can hardwire some devices, or setting up your wireless access point for WiFi.  
+The very last thing you need to do is finish setting up your network, whether that's connecting a switch so you can hardwire some devices, or setting up your wireless access point for WiFi.  
 **Make sure that whatever you plug into the router, you connect it to the `eth1` port**  
 If you're connecting a wireless access point, a switch, a switch with a wireless access point connected to it, just be sure your local network starts at the `eth1` port of your Edgerouter.  
 **Also, if you're connecting a device for WiFi, I recommend you set it to 'Bridge Mode'**  
