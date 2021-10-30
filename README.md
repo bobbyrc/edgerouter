@@ -2,7 +2,7 @@
 > Free yourself from the 'Network Box'
 
 This guide will take you through, step by step, setting up your Edgerouter 4 or Edgerouter 6P for use with Google Fiber's gigabit service. Some of the guide will be using EdgeOS to configure the basic setup, but we will need to use the CLI for the last bit. Some level of knowledge regarding routers and the use of the CLI is assumed for this guide.  
-**Depending on which city you're in, you may not require the config below. Kansas City seems to be one area that doesn't require it.**  
+**Depending on which city you're in, you may not require the config below. Kansas City seems to be one area that doesn't require it. Please let me know if you're aware of other cities that don't require this config.**  
   
 **For this config to work properly, your Edgerouter must be at factory default settings**
 
