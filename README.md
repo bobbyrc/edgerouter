@@ -133,6 +133,7 @@ Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
 
 If you see something that needs to be corrected, or something that could be improved, feel free to fork this repo and submit a PR.  
 You can also open an Issue and I'll get it fixed/added.
+This repo is now participating in Hacktoberfest.
 
 <!-- Markdown link & img dfn's -->
 [wiki]: https://github.com/yourname/yourproject/wiki
