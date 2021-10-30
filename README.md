@@ -6,6 +6,8 @@ This guide will take you through, step by step, setting up your Edgerouter 4 or 
   
 **For this config to work properly, your Edgerouter must be at factory default settings**
 
+**Google now lists their 1Gig service as "compatible with user provided routers". I haven't tested this myself, but this may no longer be necessary unless you pay for the 2Gig down service. Please let me know if you have any insight here!**
+
 ---
 
 ## Step 1 - EdgeOS
